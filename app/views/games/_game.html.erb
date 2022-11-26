@@ -1,4 +1,4 @@
-<div id="<%= dom_id game %>">
+<div id="<%= dom_id game %>" class="card">
   <p>
     <strong>Title:</strong>
     <%= game.title %>
@@ -9,7 +9,7 @@
     <%= game.console_type.titleize %>
   </p>
 
-  <h2>Accounts that own this game:</h2>
+  <h3>Accounts that own this game:</h3>
   <ul>
     <% game.accounts.each do |account| %>
       <li><%= account.email %></li>

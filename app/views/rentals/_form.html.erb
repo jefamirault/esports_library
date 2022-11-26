@@ -1,0 +1,37 @@
+<%= form_with(model: rental) do |form| %>
+  <% if rental.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+      <ul>
+        <% rental.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :console_id, style: "display: block" %>
+    <%= form.select :console_id, options_for_select(Console.all.map{|k,v| [k.name, k.id]}) %>
+  </div>
+
+  <div>
+    <%= form.label :checked_out, style: "display: block" %>
+    <%= form.datetime_field :checked_out %>
+  </div>
+
+  <div>
+    <%= form.label :returned, style: "display: block" %>
+    <%= form.datetime_field :returned %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

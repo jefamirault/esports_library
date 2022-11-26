@@ -1,4 +1,4 @@
-<div id="<%= dom_id account %>">
+<div id="<%= dom_id account %>" class="card">
   <p>
     <strong>Email:</strong>
     <%= account.email %>
@@ -14,7 +14,7 @@
     <%= account.console %>
   </p>
 
-  <h2>Games:</h2>
+  <h3>Games:</h3>
   <ul>
     <% account.games.each do |game| %>
       <li><%= game.title %></li>

@@ -1,16 +1,31 @@
-<div id="<%= dom_id console %>">
-<!--  <p>-->
-<!--    <strong>Kind:</strong>-->
-    <%#= console.kind %>
-<!--  </p>-->
+<div id="<%= dom_id console %>" class="card">
 
   <p>
-    <strong>Name:</strong>
-    <%= console.name %>
+    <strong>Console Type:</strong>
+    <%= console.console_type %>
   </p>
 
   <p>
-    <strong>Purchase date:</strong>
+    <strong>Label:</strong>
+    <%= console.console_type %>
+  </p>
+
+  <h3>Games on this Console:</h3>
+  <ul>
+    <% console.games.each do |game| %>
+      <li><%= game %></li>
+    <% end %>
+  </ul>
+
+  <h3>Accounts on this Console:</h3>
+  <ul>
+    <% console.accounts.each do |account| %>
+      <li><%= account %></li>
+  <% end %>
+  </ul>
+
+  <p>
+    <strong>Purchased:</strong>
     <%= console.purchase_date %>
   </p>
 
