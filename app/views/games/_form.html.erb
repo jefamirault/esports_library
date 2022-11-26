@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :console_type, style: "display: block" %>
-    <%= form.number_field :console_type %>
+    <%= form.select :console_type, options_for_select(Game.console_types.map{|t, v| [t.titleize, t]}) %>
   </div>
 
   <div>

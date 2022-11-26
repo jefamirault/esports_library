@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_175511) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_26_180733) do
   create_table "accounts", force: :cascade do |t|
     t.string "email"
     t.integer "kind"
@@ -37,6 +37,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_175511) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.integer "console_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "kind"
+    t.integer "account_id"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
