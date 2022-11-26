@@ -6,4 +6,5 @@ class Account < ApplicationRecord
 
   has_many :subscriptions
 
+  has_and_belongs_to_many :games
 end

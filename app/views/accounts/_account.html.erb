@@ -14,4 +14,11 @@
     <%= account.console_id %>
   </p>
 
+  <h2>Games:</h2>
+  <ul>
+    <% account.games.each do |game| %>
+      <li><%= game.title %></li>
+    <% end %>
+  </ul>
+
 </div>
