@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_170152) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_26_172950) do
+  create_table "accounts", force: :cascade do |t|
+    t.string "email"
+    t.integer "kind"
+    t.integer "console_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "consoles", force: :cascade do |t|
     t.integer "kind"
     t.string "name"
