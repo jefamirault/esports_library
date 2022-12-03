@@ -1,8 +1,8 @@
 class Account < ApplicationRecord
 
-  enum :kind, [:nintendo]
+  enum :kind, ['Nintendo']
 
-  belongs_to :console
+  belongs_to :console, required: false
 
   has_many :subscriptions
 

@@ -1,5 +1,5 @@
 class Console < ApplicationRecord
-  enum :kind, [:nintendo_switch]
+  enum :kind, ['Nintendo Switch']
 
   has_many :accounts
   has_many :games, through: :accounts
@@ -8,6 +8,6 @@ class Console < ApplicationRecord
   end
 
   def console_type
-    self.kind.titleize
+    self.kind
   end
 end

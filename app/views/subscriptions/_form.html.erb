@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :kind, style: "display: block" %>
-    <%= form.select :kind, options_for_select(Subscription.kinds.map {|k, v| [k.titleize, k]}, subscription.kind) %>
+    <%= form.select :kind, options_for_select(Subscription.kinds.map {|k, v| [k, k]}, subscription.kind) %>
   </div>
 
   <div>

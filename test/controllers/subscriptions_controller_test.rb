@@ -3,6 +3,7 @@ require "test_helper"
 class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @subscription = subscriptions(:one)
+    @account = accounts(:one)
   end
 
   test "should get index" do

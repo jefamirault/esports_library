@@ -2,12 +2,12 @@
 
 one:
   user_id: 1
-  console_id: 1
+  console: one
   checked_out: 2022-11-26 13:37:59
   returned: 2022-11-26 13:37:59
 
 two:
   user_id: 1
-  console_id: 1
+  console: two
   checked_out: 2022-11-26 13:37:59
   returned: 2022-11-26 13:37:59
