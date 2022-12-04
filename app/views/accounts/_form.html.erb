@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :console_id, style: "display: block" %>
-    <%= form.number_field :console_id %>
+    <%= form.select :console_id, options_for_select(Console.all) %>
   </div>
 
   <div>

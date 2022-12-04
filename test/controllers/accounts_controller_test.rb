@@ -35,7 +35,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update account" do
     patch account_url(@account), params: { account: { console_id: @account.console_id, email: @account.email, kind: @account.kind } }
-    assert_redirected_to account_url(@account)
+    assert_redirected_to edit_account_url(@account)
   end
 
   test "should destroy account" do

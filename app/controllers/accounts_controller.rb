@@ -38,7 +38,7 @@ class AccountsController < ApplicationController
   def update
     respond_to do |format|
       if @account.update(account_params)
-        format.html { redirect_to account_url(@account), notice: "Account was successfully updated." }
+        format.html { redirect_to edit_account_url(@account), notice: "Account was successfully updated." }
         format.json { render :show, status: :ok, location: @account }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class AccountsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def account_params
-      params.require(:account).permit(:email, :kind, :console_id)
+      params.require(:account).permit(:email, :kind, :console_id, :game_id, :delete_game_id)
     end
 end

@@ -4,7 +4,11 @@
 
 <br>
 
+<%= render "edit_games", account: @account %>
+
 <div>
   <%= link_to "Show this account", @account %> |
   <%= link_to "Back to accounts", accounts_path %>
 </div>
+
+<p style="color: green"><%= notice %></p>

@@ -1,0 +1,28 @@
+<%= form_with(model: account) do |form| %>
+  <% if account.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+        <% account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Games:</h3>
+  <ul>
+    <% account.games.each do |game| %>
+      <li><%= game.title %></li>
+    <% end %>
+  </ul>
+  <div>
+    <%= form.label :game_id, 'Add Game', style: "display: block" %>
+    <%= form.collection_select :game_id, Game.all - @account.games, 'id', :title, { prompt: '-- Choose Game --'}, { onchange: "this.form.submit()" } %>
+  </div>
+  <div>
+    <%= form.label :delete_game_id, 'Remove Game', style: "display: block" %>
+    <%= form.collection_select :delete_game_id, account.games, 'id', :title, { prompt: '-- Choose Game --'}, { onchange: "this.form.submit()" } %>
+  </div>
+<% end %>
