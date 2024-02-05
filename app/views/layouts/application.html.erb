@@ -11,6 +11,13 @@
   </head>
 
   <body>
+  <div style="float: right;">
+    <% if session[:logged_in] %>
+      <%= 'Logged In.' %>
+      <%= link_to 'Log Out', auth_logout_path %>
+    <% end %>
+  </div>
+
   <nav>
     <%= link_to 'Consoles', consoles_path %> |
     <%= link_to 'Games', games_path %> |

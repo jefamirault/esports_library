@@ -1,5 +1,6 @@
 class ConsolesController < ApplicationController
   before_action :set_console, only: %i[ show edit update destroy ]
+  before_action :authenticate
 
   # GET /consoles or /consoles.json
   def index

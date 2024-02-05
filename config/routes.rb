@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'auth/new_session'
+  post 'auth/create_session'
+  get 'auth/logout'
   resources :rentals
   resources :subscriptions
   resources :games
