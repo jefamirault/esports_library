@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :console_id, style: "display: block" %>
-    <%= form.select :console_id, options_for_select(Console.all) %>
+    <%= form.select :console_id, options_for_select(Console.all.map{|c| [c, c.id]}, account.console_id) %>
   </div>
 
   <div>
